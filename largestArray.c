@@ -1,32 +1,27 @@
-#include <stdio.h>
-
-int main()
-{
-    int arr[9];
-
-    for (int i = 0; i < 9; i++)
+#include<stdio.h>
+int main(){
+    int n,size;
+    printf("Enter the size of the array :\n");
+    scanf("%d",&size);
+    int arr[size];
+    printf("---Enter Array Element---");
+    for (int i = 0; i < size; i++)
     {
-        printf("Enter %dth element", i);
-        scanf("%d", &arr[i]);
-    }
-    printf("You entered:");
-    for (int i = 0; i < 9; i++)
-    {
-        printf("%d ", arr[i]);
+        scanf("%d",&arr[i]);
     }
     int max = arr[0];
-    for (int i = 0; i < 9; i++)
+    
+    for (int i = 0; i < size; i++)
     {
-        for (int j = i + 1; j < 9; j++)
+        if (max < arr [i])
         {
-            if (arr[j] > arr[i])
-            {
-                max = arr[j];
-            }
-            else
-            {
-                max = arr[i];
-            }
+            max = arr [i];
         }
+        
     }
+    printf("Max value in the array is %d",max);
+    
+    
+    
+    return 0;
 }
